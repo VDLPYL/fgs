@@ -7,25 +7,45 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>ENIGHUR</h1>
-    </header>
-    <main>
-        <section>
-            <h2>HOJA DE RUTA
-            </h2>
-            <ul>
-                <li>
-                    <a href="pdfs/documento1.pdf" download="documento1.pdf">Descargar la hoja de ruta</a>
-                </li>
-            </ul>
-        </section>
-    </main>
-    <footer>
-        <p>© 2024 INEC</p>
-    </footer>
-
-<br><br>
+<header>
+    <h1>ENIGHUR</h1>
+</header>
+<!--{<main>} Es para crear un borde -->
+<!-- <main> -->
+<section>
+<h2>HOJA DE RUTA</h2>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .pdf-page {
+            margin: 20px 0;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+    <!-- Mostrar páginas como imágenes -->
+    <div class="pdf-page">
+        <img src="pdfs/hojaderuta1.jpg" alt="Página 1 del documento">
+    </div>
+    <div class="pdf-page">
+        <img src="pdfs/hojaderuta2.jpg" alt="Página 2 del documento">
+    </div>
+    
+    <ul>
+        <li>
+            <a href="pdfs/hojaderuta.pdf" download="documento1.pdf">Descargar esta hoja de ruta</a>
+        </li>
+    </ul>
+</section>
+<!--</main>-->
+<footer>
+    <p>© 2024 INEC</p>
+</footer>
+<br>
 <h6>
     <!--home page = página de inicio-->
     <a href="https://VDLPYL.github.io/VDLPYL">VDLPYL</a>
