@@ -5,14 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>precio</title>
     <link rel="stylesheet" type="text/css" href="index.css">
+
+
+
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #999;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+
 </head>
 <body>
-    <h3>precio</h3>
-Este precio es el valor que, los clientes normalmente me han cancelado
+    <h3><span class="n">Precio</span></h3>
+<br>
+Los montos que están aquí, son los valores que normalmente los clientes me han cancelado
 <br><br>
 <iframe width="700" height="300" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=F63906F5FCD5C28D%21365&authkey=%21AA-qKUQSTWP96As&em=2&wdAllowInteractivity=False&Item='fgs-precio'!A1%3AJ100&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"></iframe>
+<br>
+<iframe 
+    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTcFYwSPf3MdoNjaVLFz41EFB9ja6p1zrRF4akzHlHUVIVccuS4p767qcx2d9UUyojfnrqUyeJvP8ZW/pubhtml?gid=0&single=true" 
+    width="100%" 
+    height="600" 
+    frameborder="0">
+</iframe>
+
+
+
+<br><br><br>
+<div id="tabla"></div>
+<script>
+const urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTcFYwSPf3MdoNjaVLFz41EFB9ja6p1zrRF4akzHlHUVIVccuS4p767qcx2d9UUyojfnrqUyeJvP8ZW/pub?output=csv";
+
+fetch(urlCSV)
+    .then(response => response.text())
+    .then(csv => {
+    const filas = csv.trim().split("\n").map(fila => fila.split(","));
+    let html = "<table>";
+
+    filas.forEach((fila, i) => {
+        html += "<tr>";
+        fila.forEach(celda => {
+        html += i === 0 ? `<th>${celda}</th>` : `<td>${celda}</td>`;
+        });
+        html += "</tr>";
+    });
+
+    html += "</table>";
+    document.getElementById("tabla").innerHTML = html;
+    })
+    .catch(error => {
+    console.error("Error al cargar los datos:", error);
+    });
+</script>
+
+
+
 <br><br>
-El precio por kilómetro tiene un valor de -0,02 ctvs
+El precio por kilómetro tiene un valor mínimo de -0,05 ctvs
+<br><br><br>
+Favor negociar el valor, antes de solicitar el 
+    <!--Servicio de carrera-->
+    <a href="https://VDLPYL.github.io/fgs/serviciodecarreras">Servicio de carrera</a>
 <br><br><br>
 <!--Solo tienes que ser Persistente-->
 <h6>
